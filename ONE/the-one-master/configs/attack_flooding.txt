@@ -9,7 +9,7 @@ Scenario.endTime = 43200
 
 btInterface.type = SimpleBroadcastInterface
 btInterface.transmitSpeed = 250k
-btInterface.transmitRange = 10
+btInterface.transmitRange = 50
 
 highspeedInterface.type = SimpleBroadcastInterface
 highspeedInterface.transmitSpeed = 10M
@@ -18,7 +18,7 @@ highspeedInterface.transmitRange = 1000
 Scenario.nrofHostGroups = 9
 
 Group.movementModel = ShortestPathMapBasedMovement
-Group.router = ProphetRouter
+Group.router = InstrumentedProphetRouter
 Group.bufferSize = 5M
 Group.waitTime = 0, 120
 Group.nrofInterfaces = 1
@@ -71,17 +71,17 @@ Group6.nrofHosts = 2
 # “Malicious slots” (still ProphetRouter; flooding is driven by Events2)
 Group7.groupID = pm
 Group7.nrofHosts = 8
-Group7.router = ProphetRouter
+Group7.router = InstrumentedProphetRouter
 
 Group8.groupID = cm
 Group8.nrofHosts = 8
 Group8.okMaps = 1
 Group8.speed = 2.7, 13.9
-Group8.router = ProphetRouter
+Group8.router = InstrumentedProphetRouter
 
 Group9.groupID = wm
 Group9.nrofHosts = 8
-Group9.router = ProphetRouter
+Group9.router = InstrumentedProphetRouter
 
 
 ## Message creation
@@ -131,3 +131,6 @@ GUI.UnderlayImage.offset = 64, 20
 GUI.UnderlayImage.scale = 4.75
 GUI.UnderlayImage.rotate = -0.015
 GUI.EventLogPanel.nrofEvents = 100
+
+InstrumentedProphetRouter.windowSize = 300
+InstrumentedProphetRouter.logDir = logs/attack_flooding
